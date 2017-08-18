@@ -1,0 +1,33 @@
+{
+  "name": "hexo-asset-oss",
+  "version": "0.0.1",
+  "description": "Aliyun OSS Image tag for hexo.",
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "Xuefei Chen",
+      "email": "chenxuefei_pp@163.com"
+    }
+  ],
+  "author": "chenxuefei-pp",
+  "homepage": "https://github.com/chenxuefei-pp/hexo-asset-oss#readme",
+  "keywords": [
+    "hexo",
+    "aliyun",
+    "oss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenxuefei-pp/hexo-asset-oss.git"
+  },
+  "dependencies": {
+    "ali-oss": "^4.10.0",
+    "bluebird": "^3.5.0",
+    "co": "^4.6.0",
+    "hexo-fs": "^0.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
