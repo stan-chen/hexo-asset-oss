@@ -7,14 +7,17 @@
 'use strict';
 
 var ctx = hexo;
-var enable = ctx.config.oss_asset;
+var oss_config = ctx.config.asset_oss;
+var enable = false;
+if (oss_config.enable &&
+    oss_config.oss_url.length &&
+    oss_config.oss_acid.length &&
+    oss_config.oss_ackey.length &&
+    oss_config.oss_region.length &&
+    oss_config.oss_bucket.length  ){
+    enable = true;
+}
 
 if(enable){
-    var p = require('./lib/process')(ctx);
-    ctx.extend.helper.register('url_for', require('./lib/url_for'));
-    console.log('注册插件完毕');
-    //ctx.extend.processor.register( p.pattern, p.process );
-    //ctx.extend.filter.register( 'before_generate', p.process );
-    //ctx.extend.filter.register( 'after_generate', p.routeProcess );
-    //hexo.extend.generator.register( 'aliyun',  p.process );
+    hexo.extend.filter.register('after_generate', require('./lib/process')(ctx) );
 }
