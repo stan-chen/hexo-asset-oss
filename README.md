@@ -1,4 +1,4 @@
-# hexo-tag-ossimg
+# hexo-asset-oss
 
 # About
 
@@ -24,7 +24,6 @@ asset_oss:
     enable: true
     oss_url: https://assets.example.com
     oss_root: /static/ # optional default '/'
-    oss_img_path: /images/ # optional for ossimg tag
     oss_acid: <AccessID>
     oss_ackey: <AccessKey>
     oss_region: oss-cn-shenzhen
@@ -32,8 +31,6 @@ asset_oss:
     oss_internal: false # optional is internal default false
 ```
 
-Only post images ? [HERE](https://github.com/chenxuefei-pp/hexo-tag-ossimg#readme)
-
 ## License
 
-Copyright (c) 2017, Xuefei Chen. Licensed under the [MIT license](LICENSE).
+Copyright (c) 2020, Stanley Chen. Licensed under the [MIT license](LICENSE).
