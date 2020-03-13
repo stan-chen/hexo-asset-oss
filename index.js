@@ -18,22 +18,21 @@ const enable =
   oss_config.oss_region.length &&
   oss_config.oss_bucket.length;
 
-if (enable) {
-  // eslint-disable-next-line no-undef
-  hexo.extend.tag.register('ossimg', function(args) {
-    const PostAsset = ctx.model('PostAsset');
-    let imageRoot = ctx.config.root;
-    if (oss_config.oss_root) {
-      imageRoot = pathFn.join(oss_config.oss_root, 'post-assets/');
-      imageRoot = url.resolve(oss_config.oss_url, imageRoot);
-    }
-    const slug = args.shift();
-    if (!slug) return;
-    const asset = PostAsset.findOne({ post: this._id, slug: slug });
-    if (!asset) return;
-    const title = args.length ? args.join(' ') : '';
-    const alt = title || asset.slug;
-    return (
+// eslint-disable-next-line no-undef
+hexo.extend.tag.register('ossimg', function(args) {
+  const PostAsset = ctx.model('PostAsset');
+  let imageRoot = ctx.config.root;
+  if (enable && oss_config.oss_root) {
+    imageRoot = pathFn.join(oss_config.oss_root, 'post-assets/');
+    imageRoot = url.resolve(oss_config.oss_url, imageRoot);
+  }
+  const slug = args.shift();
+  if (!slug) return;
+  const asset = PostAsset.findOne({ post: this._id, slug: slug });
+  if (!asset) return;
+  const title = args.length ? args.join(' ') : '';
+  const alt = title || asset.slug;
+  return (
       '<img src="' +
       url.resolve(imageRoot, asset.path) +
       '" alt="' +
@@ -41,8 +40,10 @@ if (enable) {
       '" title="' +
       title +
       '">'
-    );
-  });
+  );
+});
+
+if (enable) {
   // eslint-disable-next-line no-undef
   hexo.extend.filter.register('after_generate', require('./lib/process')(ctx));
 }

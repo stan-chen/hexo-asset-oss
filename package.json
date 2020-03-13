@@ -1,7 +1,7 @@
 {
   "name": "hexo-asset-oss",
-  "version": "0.1.2",
-  "description": "Aliyun OSS Image tag for hexo.",
+  "version": "0.1.1",
+  "description": "Aliyun OSS Image tag and Asset publish for hexo.",
   "license": "MIT",
   "main": "index.js",
   "maintainers": [
