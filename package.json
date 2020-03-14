@@ -22,11 +22,11 @@
     "url": "git+https://github.com/stan-chen/hexo-asset-oss.git"
   },
   "dependencies": {
-    "ali-oss": "^4.10.0",
+    "ali-oss": "^6.5.1",
     "bluebird": "^3.5.0",
     "chalk": "^3.0.0",
     "co": "^4.6.0",
-    "hexo-fs": "^0.2.0"
+    "hexo-fs": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
