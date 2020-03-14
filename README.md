@@ -1,5 +1,7 @@
 # hexo-asset-oss
 
+![Test](https://github.com/stan-chen/hexo-asset-oss/workflows/Test/badge.svg)
+
 # About
 
 > This is a [Hexo](http://hexo.io/) tag plugin for push all assets to aliyun OSS.
